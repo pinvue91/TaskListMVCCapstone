@@ -1,0 +1,10 @@
+﻿@model List<AspNetUsers>
+
+    <h2>Here are our users:</h2>
+
+@foreach(AspNetUsers user in Model)
+{
+    <p><b>User Name:</b> @user.UserName</p>
+    <p><b>User ID:</b> @user.Id</p>
+    <hr />
+}

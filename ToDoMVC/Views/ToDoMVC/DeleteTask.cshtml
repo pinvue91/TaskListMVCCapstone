@@ -1,0 +1,19 @@
+﻿@model Tasks
+
+    <h2>Delete Task</h2>
+    <p>Are you sure you want to delete this task?</p>
+    <p>Task Description: @Model.TaskDescription</p>
+    <p>UserID: @Model.UserId</p>
+    <p>Due Date: @Model.DueDate</p>
+    <p>Completed: @Model.Completed</p>
+
+    <form asp-action="DeleteTask" asp-controller="ToDoMVC" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="TaskDescription" value="@Model.TaskDescription" />
+        <input type="hidden" name="DueDate" value="@Model.DueDate" />
+        <input type="hidden" name="UserId" value="@Model.UserId" />
+        <input type="hidden" name="Completed" value="@Model.Completed" />
+        <button><input type="submit" value="YES" /></button>
+    </form>
+
+    <a asp-action="Index" asp-controller="ToDoMVC"><button>NO</button></a>

@@ -1,0 +1,17 @@
+﻿@model List<Tasks> 
+
+    <h2>Here are our current tasks:</h2>
+
+        @foreach (Tasks task in Model)
+        {
+            <p><b>Task Description:</b> @task.TaskDescription</p>
+            <p><b>UserID:</b> @task.UserId</p>
+            <p><b>Due Date:</b> @task.DueDate</p>
+            <p><b>Completed?</b> @task.Completed</p>
+            <a asp-action="EditTask" asp-controller="ToDoMVC" asp-route-Id="@task.Id"><button>Update/Complete Task</button></a>
+            <a asp-action="DeleteTask" asp-controller="ToDoMVC" asp-route-Id="@task.Id"><button>Delete Task</button></a>
+            <hr />
+        }
+
+        
+

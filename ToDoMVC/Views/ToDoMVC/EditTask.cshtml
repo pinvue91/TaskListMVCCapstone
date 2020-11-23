@@ -1,0 +1,13 @@
+﻿@model Tasks
+
+    <h2>Update/Complete Task</h2>
+    <p>Please make your changes to the following task:</p>
+    <form method="post">
+        <p>UserId: @Model.UserId</p> <input type="hidden" value="@Model.UserId" name="UserId" />
+        <p>Task Description: <input type="text" name="TaskDescription" value="@Model.TaskDescription" required/></p>
+        <p>Due Date: <input type="date" name="DueDate" value="@Model.DueDate" required/></p>
+        <p>Completed: <input type="checkbox" value="true" name="Completed"/><input type="hidden" value="false" name="Completed"/></p>
+        <input type="submit" /> 
+    </form>
+    <br />
+    <a asp-action="ViewTasks"><button>Cancel</button></a>

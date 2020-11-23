@@ -1,0 +1,17 @@
+﻿@model List<AspNetUsers>
+
+    <h2>Please create a task</h2>
+    <hr />
+    <form method="post">
+        <p>User Email <select name="UserID">
+        @foreach (AspNetUsers user in Model)
+        {
+            <option value="@user.Id">@user.UserName</option>
+        }
+        </select>
+        </p>
+        
+        <p>Task Description <input type="text" name="TaskDescription" required /></p>
+        <p>Task Due Date <input type="date" name="DueDate" required/></p>
+        <input type="submit" />
+    </form>
